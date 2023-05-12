@@ -7,7 +7,7 @@ public class Section
     public List<Seat> Seats = new List<Seat>();
     public int TotalRows;
     public int TotalColumns;
-    public List<Group> PlacedChildren = new List<Group>();
+    public bool IsOpen { get; set; }
 
     /// <summary>
     /// Places a group on the front row
@@ -24,7 +24,7 @@ public class Section
             throw new FrontRowIsNotAvailableException("Front row is not available");
         }
 
-        foreach (var seat in frontRow)
+        foreach (Seat seat in frontRow)
         {
             if (!visitors.Any()) break;
 

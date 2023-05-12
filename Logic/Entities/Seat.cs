@@ -4,8 +4,16 @@ namespace Logic.Entities;
 
 public class Seat
 {
-    public int Row;
-    public int Column;
+    public readonly int Row;
+    public readonly int Column;
     public Visitor? Visitor;
+
+    public Seat(int row, int column)
+    {
+        Row = row;
+        Column = column;
+    }
+
     public bool IsAvailable => Visitor == null;
+    
 }
