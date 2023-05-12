@@ -11,4 +11,5 @@ public class Group
 
     public int TotalChildren => Visitors.Count(v => v.IsChild);
     public int TotalAdults => Visitors.Count(v=>!v.IsChild);
+    public bool HasAloneChildren => TotalChildren > 0 && TotalAdults == 0;
 }

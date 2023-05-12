@@ -1,7 +1,19 @@
-﻿namespace Logic;
+﻿using Logic.Entities;
 
-public class GenerateSection
+namespace Logic;
+
+public static class GenerateSection
 {
-    public int MaxRows = 3;
-    public int MaxColumns = 10;
+    private static Random _random = new Random();
+
+    public static List<Section> Generate()
+    {
+        List<Section> sections = new List<Section>();
+        for (int i = 0; i < _random.Next(3, 8); i++)
+        {
+            sections.Add(new Section());
+        }
+
+        return sections;
+    }
 }
